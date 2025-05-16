@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+### Frontend Setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Navigate to the frontend directory
+   ```
+   cd frontend
+   ```
 
-## Available Scripts
+2. Install dependencies
+   ```
+   npm install
+   ```
 
-In the project directory, you can run:
+3. Start the frontend
+   ```
+   npm start
+   ```
 
-### `npm start`
+4. Open http://localhost:3000 in your browser
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## API Endpoints
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Models
 
-### `npm test`
+- GET `/api/models` - Get all models
+- GET `/api/models/:id` - Get a single model
+- POST `/api/models` - Create a new model
+- PATCH `/api/models/:id` - Update a model
+- DELETE `/api/models/:id` - Delete a model
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Plugins
 
-### `npm run build`
+- GET `/api/plugins` - Get all plugins
+- GET `/api/plugins/:id` - Get a single plugin
+- POST `/api/plugins` - Create a new plugin
+- PATCH `/api/plugins/:id` - Update a plugin
+- DELETE `/api/plugins/:id` - Delete a plugin
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Conversations
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- GET `/api/conversations` - Get all conversations
+- GET `/api/conversations/:id` - Get a single conversation with its messages
+- POST `/api/conversations` - Create a new conversation
+- PATCH `/api/conversations/:id` - Update a conversation
+- DELETE `/api/conversations/:id` - Delete a conversation and its messages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Messages
 
-### `npm run eject`
+- GET `/api/messages/conversation/:conversationId` - Get all messages for a conversation
+- POST `/api/messages` - Create a new message (with automatic AI response if user message)
+- DELETE `/api/messages/:id` - Delete a message
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Chat (Legacy)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- POST `/api/chat` - Send a message and receive a response
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies Used
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Backend
+- Express.js
+- MongoDB with Mongoose
+- Node.js
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Frontend
+- React
+- React Router
+- Axios
+- TailwindCSS 
